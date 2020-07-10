@@ -105,3 +105,16 @@ ul{
     * {
       box-sizing: border-box;
     }
+    kwanele{
+      font-size: 100px;
+      background-color: violet;
+      
+    }
+    form{
+      background-image:url("https://cdn.pixabay.com/photo/2017/01/05/18/42/sale-1956066_960_720.png") ;
+      text-decoration-color: whitesmoke;
+      text-align: center;
+      text-size-adjust: 40px;
+      font-size: 30px;
+      
+    }
