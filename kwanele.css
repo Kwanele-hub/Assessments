@@ -1,0 +1,16 @@
+body{
+    background-position: cover ;
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/20/17/19/flower-1151970_960_720.png");
+}
+h1{
+    font: size 100px;
+    text-shadow: indigo;
+    text-decoration: indigo;
+    text-decoration: indigo;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.grid{
+    font-size:40px ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
