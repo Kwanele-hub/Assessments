@@ -1,59 +1,92 @@
-* {
-    padding: 0;
-    margin: 5px;
-    text-align: center;
-  }
-  body {
-    background-color:blue;
-  }
-  .calculator {
+
+
+html, body{
+    width:100%; 
+    height:100%; 
+    font-family: 'Orbitron', sans-serif;    
+    background-color:#C1C5C8;
+}
+
+.wrap{
+    position: absolute;
+	display: table;
+	left: 50%;
+	top: 50%;
+	margin: -255px 0 0 -195px;	
+}
+
+#calculator{
+    border-radius: 5px;
+    background: #27282A;
+    padding: 10px;
+    height: 510px;
+    width: 390px;
+    box-shadow: 0px 5px 0px 0px grey;
+}
+
+
+.input{   
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    
     width: 350px;
-    height: 320px;
-    background-color: #c0c0c0;
-    box-shadow: 0px 0px 0px 10px #666;
-    border: 5px solid black;
-    border-radius: 10px;
-  }
-  #display {
-    width: 320px;
     height: 40px;
-    text-align: right;
-    background-color: black;
-    border: 3px solid white;
-    font-size: 18px;
-    left: 2px;
-    top: 2px;
-    color: #7fff00;
-  }
-  .btnTop{
-    color: white;
-    background-color: #6f6f6f;
-    font-size: 14px;
-    margin: auto;
-    width: 50px;
-    height: 25px;
-  }
-  .btnNum {
-    color: white;
-    background-color: black;
-    font-size: 14px;
-    margin: auto;
-    width: 50px;
-    height: 25px;
-  }
-  .btnMath {
-    color: white;
-    background-color: #ff4561;
-    font-size: 14px;
-    margin: auto;
-    width: 50px;
-    height: 25px;
-  }
-  .btnOpps {
-    color: white;
-    background-color: #ff9933;
-    font-size: 14px;
-    margin: auto;
-    width: 50px;
-    height: 25px;
-  }
+    margin-left: 10px;
+    margin-bottom: 0;
+    border: 2px solid grey;
+    border-radius: 6px;
+    background-color: white;
+    padding: 5px;
+    box-shadow: inset 0px 0px 10px 0px grey;
+}
+
+button {  
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    margin: 10px 4px 10px 8px;
+    height: 70px;
+    width: 80px;
+    box-shadow: 0px 8px 0px 0px grey;
+}
+
+button:active {
+    -webkit-transform: translate(0px, 3px);
+            transform: translate(0px, 3px);
+    box-shadow: none;
+}
+
+button,
+button:hover,
+button:active,
+button:visited {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+#clear{
+    background:#F15F74;
+}
+#divi,#multi,#sub, #add{
+    background: #5481E6;
+}
+#equal{
+    background: #98CB4A;
+}
+
+
+#add, #equal{       
+    position: absolute;    
+    height: 160px;
+}
+
+#equal{
+    margin-top: 100px;
+}
+
+#zero{
+    width: 180px;
+}
