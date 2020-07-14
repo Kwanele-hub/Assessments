@@ -4,42 +4,48 @@
 </head>
 <body translate ="no"></body>
 <main id="main"></main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
-
-<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-
-
-<body>
-	<div class="wrap">
-		<div id="calculator">
-			<div class="input" id="inputField">0</div>
-
-			<div id="buttons">
-				<button id="clear" value="C">C</button>
-				<button id="divi" value="/">/</button>
-				<button id="multi" value="*">*</button>
-				<button id="sub" value="-">-</button>
-				<br/>
-				<button id="seven" value="7">7</button>
-				<button id="eight" value="8">8</button>
-				<button id="nine" value="9">9</button>
-				<button id="add" value="+">+</button>
-				<br/>
-				<button id="four" value="4">4</button>
-				<button id="five" value="5">5</button>
-				<button id="six" value="6">6</button>
-				<button id="equal" value="=">=</button>
-				<br/>
-				<button id="one" value="1">1</button>
-				<button id="two" value="2">2</button>
-				<button id="three" value="3">3</button>
-				<br/>
-				<button id="zero" value="0">0</button>
-				<button id="dot" value=".">.</button>
-			</div>
-		</div>
-	</div>
-
-
-</body>
+<main>
+    <div class="container">
+      <div class="text-center">
+        <p id="title">Mama's calculator</P>
+      </div>
+      <div class="text-center">
+        <input class="text-right textBox" type="textBox" placeholder="0" readonly>
+        </input>
+      </div>
+      <div id="buttons">
+        <ul style="list-style-type:none">
+          <li>
+            <button class="btn btn-default text-center" value="C">C</button>
+            <button class="btn btn-default text-center" value="CE">CE</button>
+            <button class="btn btn-default text-center" value="%">%</button>
+            <button class="btn btn-default text-center" value="/">/</button>
+          </li>
+          <li>
+            <button class="btn btn-default text-center" value="7">7</button>
+            <button class="btn btn-default text-center" value="8">8</button>
+            <button class="btn btn-default text-center" value="9">9</button>
+            <button class="btn btn-default text-center" value="*">*</button>
+          </li>
+          <li>
+            <button class="btn btn-default text-center" value="4">4</button>
+            <button class="btn btn-default text-center" value="5">5</button>
+            <button class="btn btn-default text-center" value="6">6</button>
+            <button class="btn btn-default text-center" value="-">-</button>
+          </li>
+          <li>
+            <button class="btn btn-default text-center" value="1">1</button>
+            <button class="btn btn-default text-center" value="2">2</button>
+            <button class="btn btn-default text-center" value="3">3</button>
+            <button class="btn btn-default text-center" value="+">+</button>
+          </li>
+          <li>
+            <button class="btn btn-default text-center" value=".">.</button>
+            <button class="btn btn-default text-center" value="0">0</button>
+            <button class="btn btn-default text-center" value="+/-">+/-</button>
+            <button class="btn btn-default text-center" value="=">=</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>

@@ -1,51 +1,60 @@
-var clickedButton, equationDone = false;
-window.onload = function(){    
-    $('button').click(function(){        
-        clickedButton = $(this).attr('id');  
-        click();
-    });    
-}
+var clear = false;
+var result = "";
+var calc = "";
 
-function click(){
-    if(clickedButton === 'clear')
-        document.getElementById('inputField').innerHTML = '0';
-    else if (clickedButton === 'divi' || clickedButton === 'multi' || clickedButton === 'sub' || clickedButton === 'dot' || clickedButton === 'add'){ 
-        if(document.getElementById('inputField').innerHTML === 'Error')
-            clear();
-        document.getElementById('inputField').innerHTML += document.getElementById(clickedButton).innerHTML;
-        equationDone = false;
-    }    
-    else if (clickedButton === 'equal'){        
-        var equation = document.getElementById('inputField').innerHTML;        
-        var answer;
-        
-        try {
-            eval(equation); 
-            answer = eval(equation);
-        } catch (e) {
-            if (e instanceof SyntaxError) {
-                document.getElementById('inputField').innerHTML = 'Error';
-            }
-        }       
-        
-        if(answer == 'Infinity')
-            document.getElementById('inputField').innerHTML = 'Error';  
-        else if(Number.isInteger(answer))//if it's an int don't round to two
-            document.getElementById('inputField').innerHTML = answer;               
-        else
-            document.getElementById('inputField').innerHTML = answer.toFixed(2);   
-        
-        equationDone = true;
+$(document).ready(function() {
+  $("button").click(function() {
+    //Get value from the clicked button.
+    var text = $(this).attr("value");
+
+    //Check the value from the clicked button and move it to the textbox.
+    if (parseInt(text, 10) == text ||
+                      text === "%" ||
+                      text === "/" ||
+                      text === "*" ||
+                      text === "-" ||
+                      text === "+" ||
+                      text === ".") {
+      if (clear === false) {
+        calc += text;
+        $(".textBox").val(calc);
+      } else {
+        calc = text;
+        $(".textBox").val(calc);
+        clear = false;
+      }
     }
-    else{       
-        clear();
-        document.getElementById('inputField').innerHTML += document.getElementById(clickedButton).innerHTML;        
-    }        
-}
 
-function clear(){    
-    if(document.getElementById('inputField').innerHTML === '0' || equationDone === true || document.getElementById('inputField').innerHTML === 'Error')  
-        document.getElementById('inputField').innerHTML = '';
-    
-    equationDone = false;
-}
+    switch (text) {
+      //Clear all textbox.
+      case "C":
+        calc = "";
+        $(".textBox").val("");
+        break;
+
+        //Clear the last character digited.
+      case "CE":
+        calc = calc.slice(0, -1);
+        $(".textBox").val(calc);
+        break;
+
+        //Calculate and show the result.
+      case "=":
+        result = eval(calc);
+        $(".textBox").val(result);
+        clear = true;
+        break;
+
+        //Change the signal.
+      case "+/-":
+        if (clear === false) {
+          calc = calc * -1;
+          $(".textBox").val(calc);
+        } else {
+          result = result * -1;
+          $(".textBox").val(result);
+        }
+        break;
+    }
+  });
+});
